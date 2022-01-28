@@ -1,4 +1,4 @@
-package com.example.kafka.MotoristaService
+package com.example.kafka.motoristaService
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

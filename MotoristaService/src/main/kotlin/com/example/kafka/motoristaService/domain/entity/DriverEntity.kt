@@ -1,9 +1,9 @@
-package com.example.kafka.MotoristaService.domain.entity
+package com.example.kafka.motoristaService.domain.entity
 
 import javax.persistence.*
 
 @Entity
-data class DriverEntity (
+data class DriverEntity(
     @Id
     var id: String,
     var name: String,
@@ -12,4 +12,4 @@ data class DriverEntity (
     @OneToOne(cascade = arrayOf(CascadeType.ALL))
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     var car: CarEntity
-        )
+)

@@ -1,11 +1,11 @@
-package com.example.kafka.MotoristaService
+package com.example.kafka.motoristaService
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class DriverServiceApplication
+open class DriverServiceApplication
 
 fun main(args: Array<String>) {
-	runApplication<DriverServiceApplication>(*args)
+    runApplication<DriverServiceApplication>(*args)
 }
