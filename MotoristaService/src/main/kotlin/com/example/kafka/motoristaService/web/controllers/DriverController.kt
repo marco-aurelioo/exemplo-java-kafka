@@ -27,4 +27,5 @@ class DriverController(var driverService: DriverService) {
     ): ResponseEntity<DriverDto> {
         return ResponseEntity.ok(driverService.updateDriver(id, driver.convertToEntity()).convertToDto())
     }
+
 }

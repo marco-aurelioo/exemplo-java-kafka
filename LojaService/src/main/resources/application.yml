@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pockafka2
+    username: pockafka
+    password: pockafka
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL93Dialect
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQL93Dialect
+    show-sql: true
+    properties:
+      javax:
+        persistence:
+          query:
+            timeout: 60000

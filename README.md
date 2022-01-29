@@ -22,3 +22,5 @@ Aceite de transporte.
 Acompanhamento movimentação do motorista para retirada.
 Acompanhamento movimentação do motorista para entrega.
 
+#### Help commands:
+

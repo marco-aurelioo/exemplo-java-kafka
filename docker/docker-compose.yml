@@ -3,13 +3,15 @@ version: "3.7"
 services:
   postgres_database:
     container_name: "pockafka"
-    image: "postgres:12-alpine"
+    image: postgres:12-alpine
     ports:
       - 5432:5432
+    volumes:
+     - ./postgres-multi-databases:/docker-entrypoint-initdb.d
     environment:
+      - POSTGRES_MULTIPLE_DATABASES="pockafka","pockafka2"
       - POSTGRES_USER=pockafka
       - POSTGRES_PASSWORD=pockafka
-      - POSTGRES_DB=pockafka
 
 #  zookeeper:
 #    image: docker.io/bitnami/zookeeper:3.7
