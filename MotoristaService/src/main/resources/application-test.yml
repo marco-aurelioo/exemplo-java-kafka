@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  config:
+    activate:
+      profile: test
+  datasource:
+    url: jdbc:h2:mem:pockafka
+    username: pockafka
+    password: pockafka
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      javax:
+        persistence:
+          query:
+            timeout: 60000
