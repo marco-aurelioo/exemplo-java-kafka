@@ -1,6 +1,13 @@
 server:
   port: 8080
 spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:29092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: car-position
+
   datasource:
     url: jdbc:postgresql://localhost:5432/pockafka
     username: pockafka
@@ -17,3 +24,10 @@ spring:
         persistence:
           query:
             timeout: 60000
+topic:
+  name:
+    producer: car-position
+uto:
+  create:
+    topics:
+      enable: true

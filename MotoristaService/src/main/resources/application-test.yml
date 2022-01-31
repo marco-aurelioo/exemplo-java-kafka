@@ -20,3 +20,5 @@ spring:
         persistence:
           query:
             timeout: 60000
+kafka:
+  bootstrapAddress: localhost:29092

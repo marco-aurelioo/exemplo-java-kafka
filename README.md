@@ -7,7 +7,8 @@ Testar implementação de serviços ligados por eventos.
 - [x] Spring boot
 - [ ] Spring boot kafka
 - [x] docker
-- [ ] kafka 
+- [ ] kafka
+- [ ] Redis 
 - [x] postgres
 
 ### Escopo do teste
@@ -21,4 +22,17 @@ Para isso temos as seguintes funcionalidades:
 - [ ] Acompanhamento movimentação do motorista para entrega.
 
 #### Help commands:
+iniciar docker:
+```
+ docker-compose rm
+ docker-compose up
+```
 
+verificar mensagens na fila:
+
+```
+ docker ps
+ docker exec -it docker_kafka_1 /bin/bash
+ kafka-run-class kafka.tools.GetOffsetShell --broker-list kafka:29092 --topic car-position --time -1
+
+```

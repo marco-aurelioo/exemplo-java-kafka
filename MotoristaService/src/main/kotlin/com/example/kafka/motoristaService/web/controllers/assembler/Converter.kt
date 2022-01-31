@@ -4,6 +4,7 @@ import com.example.kafka.motoristaService.domain.entity.CarEntity
 import com.example.kafka.motoristaService.domain.entity.DriverEntity
 import com.example.kafka.motoristaService.web.controllers.dto.CarDto
 import com.example.kafka.motoristaService.web.controllers.dto.DriverDto
+import com.example.kafka.motoristaService.web.controllers.dto.PositionDto
 
 
 fun DriverDto.convertToEntity(): DriverEntity {
@@ -15,8 +16,8 @@ fun DriverDto.convertToEntity(): DriverEntity {
         CarEntity(
             this.car.id,
             this.car.licensePlate,
-            this.car.latitude,
-            this.car.longitude
+            this.car.position.latitude,
+            this.car.position.longitude
         )
     )
 }
@@ -30,8 +31,9 @@ fun DriverEntity.convertToDto(): DriverDto {
         CarDto(
             this.car.id,
             this.car.licensePlate,
-            this.car.latitude,
-            this.car.longitude
+            PositionDto(
+                this.car.latitude,
+                this.car.longitude)
         )
     )
 }
@@ -40,7 +42,8 @@ fun CarEntity.convertToDto(): CarDto {
     return CarDto(
         this.id,
         this.licensePlate,
-        this.latitude,
-        this.longitude
+        PositionDto(
+            this.latitude,
+            this.longitude)
     )
 }
