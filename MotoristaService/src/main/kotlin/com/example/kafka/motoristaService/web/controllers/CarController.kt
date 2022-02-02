@@ -1,7 +1,7 @@
 package com.example.kafka.motoristaService.web.controllers
 
 import com.example.kafka.motoristaService.domain.service.CarService
-import com.example.kafka.motoristaService.web.controllers.assembler.convertToDto
+import com.example.kafka.motoristaService.resources.assembler.convertToDto
 import com.example.kafka.motoristaService.web.controllers.dto.CarDto
 import com.example.kafka.motoristaService.web.controllers.dto.PositionDto
 import org.springframework.http.HttpStatus

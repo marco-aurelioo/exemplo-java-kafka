@@ -1,8 +1,8 @@
 package com.example.kafka.motoristaService.web.controllers
 
 import com.example.kafka.motoristaService.domain.service.DriverService
-import com.example.kafka.motoristaService.web.controllers.assembler.convertToDto
-import com.example.kafka.motoristaService.web.controllers.assembler.convertToEntity
+import com.example.kafka.motoristaService.resources.assembler.convertToDto
+import com.example.kafka.motoristaService.resources.assembler.convertToEntity
 import com.example.kafka.motoristaService.web.controllers.dto.DriverDto
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

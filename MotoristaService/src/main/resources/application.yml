@@ -7,6 +7,13 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       group-id: car-position
+    consumer:
+      bootstrap-servers: localhost:29092
+      client-id: consumer
+      group-id: position
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
   datasource:
     url: jdbc:postgresql://localhost:5432/pockafka

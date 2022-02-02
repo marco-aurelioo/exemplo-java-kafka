@@ -1,7 +1,7 @@
 package com.example.kafka.motoristaService.domain.service
 
 import com.example.kafka.motoristaService.domain.entity.CarEntity
-import com.example.kafka.motoristaService.resources.listeners.SendCarPositionProducer
+import com.example.kafka.motoristaService.resources.producers.SendCarPositionProducer
 import com.example.kafka.motoristaService.resources.repository.CarRepository
 import com.example.kafka.motoristaService.resources.repository.DriverRepository
 import org.springframework.stereotype.Service
@@ -26,8 +26,8 @@ class CarService(
         var car = findCarPositionByCarId(id)
         car.latitude = latitude
         car.longitude = longitude
-        //carRepository.save(car)
-        sendCarPositionProducer.sendMessage(car.toString())
+
+        sendCarPositionProducer.sendMessage(car)
     }
 
 }
