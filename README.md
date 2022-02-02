@@ -5,9 +5,9 @@ Testar implementação de serviços ligados por eventos.
 
 - [x] Java 8
 - [x] Spring boot
-- [ ] Spring boot kafka
+- [x] Spring boot kafka
 - [x] docker
-- [ ] kafka
+- [x] kafka
 - [ ] Redis 
 - [x] postgres
 
@@ -16,6 +16,7 @@ Em um serviço de logistica temos um serviço que disponibiliza para lojas metor
 Para isso temos as seguintes funcionalidades:
 - [x] Cadastro de loja.
 - [x] Cadastro de motoristas.
+- [x] Atualizacao posicao motorista.
 - [ ] Busca por motorista mais proximo.
 - [ ] Aceite de transporte.
 - [ ] Acompanhamento movimentação do motorista para retirada.
