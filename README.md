@@ -8,7 +8,7 @@ Testar implementação de serviços ligados por eventos.
 - [x] Spring boot kafka
 - [x] docker
 - [x] kafka
-- [ ] Redis 
+- [x] Redis 
 - [x] postgres
 
 ### Escopo do teste
@@ -35,5 +35,11 @@ verificar mensagens na fila:
  docker ps
  docker exec -it docker_kafka_1 /bin/bash
  kafka-run-class kafka.tools.GetOffsetShell --broker-list kafka:29092 --topic car-position --time -1
+ 
+```
+deletar topico:
+
+```
+ kafka-topics --delete --bootstrap-server localhost:2181 --topic car-position
 
 ```

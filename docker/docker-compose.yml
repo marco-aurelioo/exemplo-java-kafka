@@ -1,6 +1,11 @@
 version: "3.7"
 
 services:
+  redis_cache:
+    container_name: "redis"
+    image: redis
+    ports:
+      - 6379:6379
   postgres_database:
     container_name: "pockafka"
     image: postgres:12-alpine

@@ -3,6 +3,7 @@ package com.example.kafka.motoristaService.resources.assembler
 import com.example.kafka.motoristaService.domain.entity.CarEntity
 import com.example.kafka.motoristaService.domain.entity.DriverEntity
 import com.example.kafka.motoristaService.web.controllers.dto.CarDto
+import com.example.kafka.motoristaService.web.controllers.dto.CarPosition
 import com.example.kafka.motoristaService.web.controllers.dto.DriverDto
 import com.example.kafka.motoristaService.web.controllers.dto.PositionDto
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -49,10 +50,10 @@ fun CarEntity.convertToDto(): CarDto {
     )
 }
 
-fun CarEntity.convertToJson(): String{
+fun CarPosition.convertToJson(): String{
     return ObjectMapper().writeValueAsString(this)
 }
 
-fun String.convertToCarEntity(): CarEntity{
-    return ObjectMapper().readValue(this,CarEntity::class.java)
+fun String.convertToCarPositionDto(): CarPosition{
+    return ObjectMapper().readValue(this,CarPosition::class.java)
 }
