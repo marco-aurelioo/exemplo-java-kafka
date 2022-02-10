@@ -57,3 +57,8 @@ fun CarPosition.convertToJson(): String{
 fun String.convertToCarPositionDto(): CarPosition{
     return ObjectMapper().readValue(this,CarPosition::class.java)
 }
+
+fun List<CarEntity>.convertListOfCarDto(): List<CarDto> {
+
+    return this.map { it -> it.convertToDto() }
+}

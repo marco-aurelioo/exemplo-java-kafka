@@ -5,6 +5,7 @@ import com.example.kafka.motoristaService.resources.producers.SendCarPositionPro
 import com.example.kafka.motoristaService.resources.repository.CarRepository
 import com.example.kafka.motoristaService.resources.repository.DriverRepository
 import com.example.kafka.motoristaService.web.controllers.dto.PositionDto
+import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 
 @Service
@@ -22,10 +23,14 @@ class CarService(
     }
     
     fun setCarPosition(id: String, latitude: Double, longitude: Double){
-        val carEntity =  carRepository.findById(id).get
+        val carEntity =  carRepository.findById(id).get()
         carEntity.longitude = longitude
         carEntity.latitude = latitude
         carRepository.save(carEntity)
+    }
+
+    fun findCarPositionReferencePosition(latitude: Double, longitude: Double, distance: Double): List<CarEntity> {
+        return carRepository.findCarPositionReferencePosition(latitude,longitude,distance )
     }
 
 }

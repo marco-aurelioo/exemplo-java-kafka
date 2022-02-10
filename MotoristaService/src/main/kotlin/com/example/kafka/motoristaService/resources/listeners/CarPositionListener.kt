@@ -21,7 +21,7 @@ var redisTemplate: RedisTemplate<String,String>
         val carPosition = msg.convertToCarPositionDto()
         if (readCache(carPosition.id)) {
             log.info("atualizando posicao: $msg")
-            carService.setCarPosition(carPosition.id!!, carPosition.latitude, carPosition.longitude)
+            carService.setCarPosition(carPosition.id, carPosition.latitude, carPosition.longitude)
             setToCache(carPosition.id)
         }else{
             log.info("descarta atualizacao: $msg")
@@ -33,7 +33,7 @@ var redisTemplate: RedisTemplate<String,String>
     }
 
     private fun setToCache(id: String){
-        redisTemplate.opsForValue().set(id,id, Duration.ofSeconds(30))
+        redisTemplate.opsForValue().set(id,id, Duration.ofSeconds(5))
     }
 
 }
